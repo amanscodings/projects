@@ -1,0 +1,113 @@
+
+## Example of SumCube(n)
+def SumCube(n):
+    if (n == 1):
+        return 1
+
+    s = SumCube(n - 1)
+    return (n * n * n + s)
+
+
+result = SumCube(5)
+print(result)
+
+
+
+## Example of FindMin
+def FindMin(array):
+    # Base case
+    if len(array) == 1:
+        return array[0]
+
+    # General case
+    m = FindMin(array[0:-1])
+    if (array[-1] < m):
+        return array[-1]
+    else:
+        return m
+
+
+list = [57, 87, 34, 54, 12, 45]
+FindMin(list)
+
+
+## Example of isPalindrome
+def isPalindrome(word):
+    #
+    if len(word) == 0:
+        return True
+
+    #
+    if word[0] == word[-1]:
+        return isPalindrome(word[1:-1])
+    else:
+        return False
+
+
+
+print(isPalindrome("racecar"))
+print(isPalindrome("12344321"))
+print(isPalindrome("Yosimite"))
+
+
+
+def pow(base_number, exponent):
+    # Your code goes here.
+
+    if(exponent ==0):
+         return 1
+
+    power = pow(base_number, exponent-1)
+    return power
+
+    power = base_number * pow (base_number, exponent - 1)
+    return power
+
+print(pow(7,2))
+print(pow(2,10))
+
+
+def fastExpRec(base_number, exponent):
+    # Your code goes here.
+
+    if (exponent == 0):
+        return 1
+    x = exponent//2
+    y = fastExpRec(base_number, x)
+    if (exponent%2 ==0):
+        return(y*y)
+    else:
+        return (y*y*base_number)
+    return 0
+
+print(fastExpRec(7,2))
+print(fastExpRec(2,10))
+
+
+
+# Write your factorial function here
+def factorial(n):
+    if(n==0):
+        return 1
+
+    return factorial(n-1)*n
+
+
+print(factorial(5))
+print(factorial(7))
+
+
+
+
+
+
+
+# Write your Fibonacci Sequence function here
+def fibbonacci(n):
+    if(n==0):
+        return 1
+    fib = n+ (n-1)
+    return fibbonacci
+
+
+print(fastExpRec(1,2))
